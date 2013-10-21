@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Youtube Search </title>
+        <link rel="stylesheet" href="include/style.css">
+        <style>
+           body { background-image:url('include/fundo.jpg');
+                  background-repeat: no-repeat;
+                 }
+        </style>
+    </head>
+
+    <body>
+        <h1> GDG </h1>
+        <div id="pesquisa">
+                <form method="post" action="/">
+                     <input type="text" name="search">
+                      <button type="">Pesquisar!</button>
+                </form>
+         </div>
+
+         <div id="resultado">
+                
+    <h1>Resultado: </h1>
+    {% for video in videos %}
+      <div style="vertical-align:top; display: inline-block">
+        <strong>
+            <div id="resultado">
+            <a href="search?v={{ video.id.videoId }}">{{ video.snippet.title }}</a>
+        </div>
+        </strong>
+      </div><br/><br/>
+    {% endfor %}
+    
+    </body>
+    
+</html>
